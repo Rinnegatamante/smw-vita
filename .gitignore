@@ -21,3 +21,9 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+*.o
+*.bin
+*.elf
+*.velf
+*.vpk
+*.sfo
