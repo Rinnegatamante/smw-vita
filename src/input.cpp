@@ -96,16 +96,15 @@ void CPlayerInput::Update(SDL_Event event, short iGameState)
 		if (iGameState == 0) { // Game
 			setState((pad.buttons & SCE_CTRL_LEFT) || (pad.lx < 80), outputControl, 0);
 			setState((pad.buttons & SCE_CTRL_RIGHT) || (pad.lx > 180), outputControl, 1);
-			setState((pad.buttons & SCE_CTRL_UP) || (pad.ly < 80), outputControl, 2);
+			setState((pad.buttons & SCE_CTRL_UP) || (pad.ly < 80) || (pad.buttons & SCE_CTRL_CROSS), outputControl, 2);
 			setState((pad.buttons & SCE_CTRL_DOWN) || (pad.ly > 180), outputControl, 3);
-			setState(pad.buttons & SCE_CTRL_CROSS, outputControl, 4);
-			setState(pad.buttons & SCE_CTRL_CIRCLE, outputControl, 5);
-			setState(pad.buttons & SCE_CTRL_SQUARE, outputControl, 6);
-			setState(pad.buttons & SCE_CTRL_TRIANGLE, outputControl, 7);
+			setState(pad.buttons & SCE_CTRL_SQUARE, outputControl, 4);
+			setState(pad.buttons & SCE_CTRL_SELECT, outputControl, 6);
+			setState(pad.buttons & SCE_CTRL_START, outputControl, 7);
 			setState(pad.buttons & SCE_CTRL_LTRIGGER, outputControl, 8);
 			setState(pad.buttons & SCE_CTRL_RTRIGGER, outputControl, 9);
-			setState(pad.buttons & SCE_CTRL_START, outputControl, 10);
-			setState(pad.buttons & SCE_CTRL_SELECT, outputControl, 11);
+			setState(pad.buttons & SCE_CTRL_TRIANGLE, outputControl, 10);
+			setState(pad.buttons & SCE_CTRL_CIRCLE, outputControl, 11);
 		} else {
 			setState((pad.buttons & SCE_CTRL_UP) || (pad.ly < 80), outputControl, 0);
 			setState((pad.buttons & SCE_CTRL_DOWN) || (pad.ly > 180), outputControl, 1);
