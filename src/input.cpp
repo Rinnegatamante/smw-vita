@@ -104,7 +104,7 @@ void CPlayerInput::Update(SDL_Event event, short iGameState)
 			setState(pad.buttons & SCE_CTRL_LTRIGGER, outputControl, 8);
 			setState(pad.buttons & SCE_CTRL_RTRIGGER, outputControl, 9);
 			setState(pad.buttons & SCE_CTRL_TRIANGLE, outputControl, 10);
-			setState(pad.buttons & SCE_CTRL_CIRCLE, outputControl, 11);
+			setState(pad.buttons & SCE_CTRL_CIRCLE, outputControl, 5);
 		} else {
 			setState((pad.buttons & SCE_CTRL_UP) || (pad.ly < 80), outputControl, 0);
 			setState((pad.buttons & SCE_CTRL_DOWN) || (pad.ly > 180), outputControl, 1);
