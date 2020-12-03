@@ -21,7 +21,7 @@ export INCLUDE	:= $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir))
 PREFIX  = arm-vita-eabi
 CC      = $(PREFIX)-gcc
 CXX      = $(PREFIX)-g++
-CFLAGS  = $(INCLUDE) -g -Wl,-q -O2 -ftree-vectorize -w -D__vita__ -DSDL_JOYSTICK_PSP2
+CFLAGS  = $(INCLUDE) -g -Wl,-q -O2 -mtune=cortex-a9 -mfpu=neon -ffast-math -ftree-vectorize -w -D__vita__ -DSDL_JOYSTICK_PSP2
 
 # includes ...
 CFLAGS += -I$(SOURCES)
