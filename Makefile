@@ -5,8 +5,8 @@ INCLUDES	:= src
 
 VITASDK	:= C:\vitasdk
 
-LIBS	:= -lSDL_net -lSDL_mixer -lSDL -lSDL_image -limgui \
-	   -lvitaGL -lpng -lz -ljpeg -lFLAC -lvorbisfile -lvorbis -logg -lmpg123 -lc -lmikmod -lmad \
+LIBS	:= -lSDL_net -lSDL_mixer -lSDL -lSDL_image -limgui -lvitaGL -lmathneon -lSceAppMgr_stub \
+	   -lpng -lz -ljpeg -lFLAC -lvorbisfile -lvorbis -logg -lmpg123 -lc -lmikmod -lmad \
 	   -lm -lout123 -lSceNet_stub -lSceNetCtl_stub  -lSceCtrl_stub -lSceCommonDialog_stub -lSceIofilemgr_stub \
 	   -lSceGxm_stub -lSceSysmodule_stub -lSceHid_stub -lSceAudio_stub -lSceDisplay_stub -lSceTouch_stub -lScePower_stub
 
@@ -42,7 +42,7 @@ $(TARGET).vpk: $(TARGET).velf
 	cp -f param.sfo sce_sys/param.sfo
 	
 	#------------ Comment this if you don't have 7zip ------------------
-	7z a -tzip ./$(TARGET).vpk -r ./sce_sys ./eboot.bin ./assets
+	7z a -tzip ./$(TARGET).vpk -r ./sce_sys ./eboot.bin ./assets ./shaders
 	#-------------------------------------------------------------------
 
 %.velf: %.elf
